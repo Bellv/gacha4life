@@ -1,0 +1,16 @@
+
+<h1>Dashboard</h1>
+<form name="dashboardform" enctype="multipart/form-data" method="post" action=".">
+{% csrf_token %}
+<p>Type Game {{form.type_game}}</p>
+<p>Type Gacha {{form.type_gacha}}</p>
+<input type="submit" name="roll_gacha" value="Rolling in the Deep" />
+<!-- <input type="submit" name="newsletter_unsub" value="Unsubscribe" /> -->
+</form>
+
+<p>List of Gacha</p>
+<ul>
+{% for gacha in gacha_list %}
+	<li>{{ gacha }}</li>
+{% endfor %}
+</ul>
